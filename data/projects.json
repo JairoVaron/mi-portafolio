@@ -1,0 +1,34 @@
+[
+  {
+    "title": "CHATintegrity — Plataforma de Comunicación Empresarial",
+    "description": "Aplicación web de mensajería en tiempo real que permite comunicación global y privada entre usuarios mediante WebSockets. Implementa autenticación, gestión de usuarios y comunicación en tiempo real.",
+    "technologies": ["Node.js", "Express.js", "Socket.IO", "PostgreSQL"],
+    "category": "Backend",
+    "github": "https://github.com/JairoVaron/CHATintegrity",
+    "image": "assets/images/projects/chatintegrity.webp"
+  },
+  {
+    "title": "Sistema de Gestión de Asistencias",
+    "description": "Aplicación web para administrar docentes, asistencias, programas y semestres académicos. Incluye autenticación de usuarios y operaciones CRUD para la gestión académica.",
+    "technologies": ["Python", "Django", "MySQL"],
+    "category": "Backend",
+    "github": "https://github.com/JairoVaron/asistencia_docente_",
+    "image": "assets/images/projects/asistencia.webp"
+  },
+  {
+    "title": "Sistema de Gestión de Biblioteca",
+    "description": "Aplicación de escritorio para administración de libros con operaciones CRUD, búsqueda y validación de registros.",
+    "technologies": ["Java", "Swing", "NetBeans"],
+    "category": "Escritorio",
+    "github": "https://github.com/JairoVaron/Sistema-de-Gesti-n-de-Biblioteca---JAVA",
+    "image": "assets/images/projects/biblioteca.webp"
+  },
+  {
+    "title": "Calculadora de Notas",
+    "description": "Aplicación web que calcula promedios académicos y proyecta las calificaciones necesarias para aprobar una asignatura o alcanzar una nota objetivo.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "Frontend",
+    "github": "https://github.com/JairoVaron/Calculadora-de-Notas",
+    "image": "assets/images/projects/calculadora.webp"
+  }
+]

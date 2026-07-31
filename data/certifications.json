@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Enterprise Full Stack with Spring Boot 4 and Angular 21",
+    "issuer": "Dev Senior Code",
+    "date": "2025",
+    "file": "assets/files/certificates/spring-boot-angular.pdf"
+  },
+  {
+    "title": "Fundamentos Profesionales del Desarrollo de Software",
+    "issuer": "Microsoft y LinkedIn Learning",
+    "date": "2025",
+    "file": "assets/files/certificates/fundamentos-desarrollo-software.pdf"
+  },
+  {
+    "title": "Fundamentos de Python 1",
+    "issuer": "Cisco Networking Academy (MinTIC)",
+    "date": "2024",
+    "file": "assets/files/certificates/python-1.pdf"
+  },
+  {
+    "title": "Fundamentos de Python 2",
+    "issuer": "Cisco Networking Academy (MinTIC)",
+    "date": "2024",
+    "file": "assets/files/certificates/python-2.pdf"
+  },
+  {
+    "title": "Programación Básica",
+    "issuer": "MinTIC, Bootcamps LibreTIC 2024",
+    "date": "2024",
+    "file": "assets/files/certificates/programacion-basica.pdf"
+  }
+]

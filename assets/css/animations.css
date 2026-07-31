@@ -1,0 +1,150 @@
+/* =========================================================
+   ANIMATIONS.CSS — Keyframes, reveal-on-scroll y responsive
+   ========================================================= */
+
+/* ---------- Keyframes ---------- */
+@keyframes blink{
+  0%, 100%{ opacity: 1; }
+  50%{ opacity: 0; }
+}
+
+@keyframes pulse-dot{
+  0%, 100%{ box-shadow: 0 0 0 0 rgba(45,212,191,.5); }
+  50%{ box-shadow: 0 0 0 6px rgba(45,212,191,0); }
+}
+
+@keyframes float-blob{
+  0%, 100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(-20px, 25px) scale(1.08); }
+}
+
+@keyframes skeleton-loading{
+  0%{ background-position: 100% 50%; }
+  100%{ background-position: 0 50%; }
+}
+
+@keyframes fade-in-up{
+  from{ opacity: 0; transform: translateY(28px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in{
+  from{ opacity: 0; transform: scale(.9); }
+  to{ opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradient-shift{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+@keyframes toast-in{
+  from{ opacity: 0; transform: translateY(-12px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1.is-visible{ transition-delay: .1s; }
+.reveal-delay-2.is-visible{ transition-delay: .2s; }
+.reveal-delay-3.is-visible{ transition-delay: .3s; }
+.reveal-delay-4.is-visible{ transition-delay: .4s; }
+
+/* ---------- Micro interacciones ---------- */
+.wiggle-on-hover:hover{
+  animation: wiggle .4s ease;
+}
+@keyframes wiggle{
+  0%, 100%{ transform: rotate(0); }
+  25%{ transform: rotate(-4deg); }
+  75%{ transform: rotate(4deg); }
+}
+
+.hero-name .accent-underline{
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-teal));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* ---------- Toast de notificación ---------- */
+.toast-custom{
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1100;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-teal);
+  color: var(--text);
+  padding: .9rem 1.3rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  box-shadow: var(--shadow-soft);
+  animation: toast-in .35s ease;
+  max-width: 300px;
+}
+
+/* ---------- Cursor trail (sutil, en el hero) ---------- */
+.cursor-glow{
+  position: fixed;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,163,61,.10), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%,-50%);
+  transition: left .15s ease-out, top .15s ease-out;
+  display: none;
+}
+@media (min-width: 992px){
+  .cursor-glow{ display: block; }
+}
+
+/* ---------- Respeto a prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991.98px){
+  .hero{ padding-top: 130px; text-align: center; }
+  .timeline{ padding-left: 26px; }
+  .timeline-item::before{ left: -34px; }
+}
+
+@media (max-width: 767.98px){
+  .section{ padding: 70px 0; }
+  .terminal-body{ font-size: .82rem; }
+  .stat-number{ font-size: 1.9rem; }
+  .contact-card{ padding: 1.6rem; }
+  .filter-bar{ justify-content: center; }
+  .back-to-top{ right: 16px; bottom: 16px; width: 42px; height: 42px; }
+}
+
+@media (max-width: 575.98px){
+  .hero-name{ font-size: 1.9rem; }
+  .profile-img{ width: 130px; height: 130px; }
+  .btn-signature, .btn-ghost-custom{ width: 100%; justify-content: center; }
+  .hero-buttons{ flex-direction: column; }
+}
