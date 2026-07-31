@@ -9,11 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursorGlow();
 });
 
-/* ---------------------------------------------------------
-   1. Validación del formulario de contacto (sin backend)
-   Al validar correctamente, arma un enlace mailto con los
-   datos y muestra retroalimentación al usuario.
---------------------------------------------------------- */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrenwgzr";
+
 function initContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
@@ -21,6 +18,7 @@ function initContactForm() {
   const nameInput = document.getElementById("cf-name");
   const emailInput = document.getElementById("cf-email");
   const messageInput = document.getElementById("cf-message");
+  const submitBtn = document.getElementById("cf-submit-btn");
 
   const nameFeedback = document.getElementById("cf-name-feedback");
   const emailFeedback = document.getElementById("cf-email-feedback");
@@ -62,22 +60,48 @@ function initContactForm() {
     input.addEventListener("input", validate);
   });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!validate()) {
       showToast("Revisa los campos marcados antes de continuar.", "error");
       return;
     }
 
-    const subject = encodeURIComponent(`Contacto desde el portafolio — ${nameInput.value.trim()}`);
-    const body = encodeURIComponent(
-      `Nombre: ${nameInput.value.trim()}\nCorreo: ${emailInput.value.trim()}\n\nMensaje:\n${messageInput.value.trim()}`
-    );
+    if (FORMSPREE_ENDPOINT.includes("TU_ID_DE_FORMSPREE")) {
+      showToast(
+        "El formulario aún no está conectado a Formspree. Revisa las instrucciones en effects.js.",
+        "error"
+      );
+      return;
+    }
 
-    window.location.href = `mailto:jairovaron404@gmail.com?subject=${subject}&body=${body}`;
+    const originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<i class="bi bi-arrow-repeat"></i> Enviando...`;
 
-    showToast("¡Listo! Se abrió tu cliente de correo con el mensaje redactado.", "ok");
-    form.reset();
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form)
+      });
+
+      if (response.ok) {
+        showToast("¡Mensaje enviado! Te responderé lo antes posible.", "ok");
+        form.reset();
+      } else {
+        throw new Error("Formspree respondió con un error.");
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      showToast(
+        "No se pudo enviar el mensaje. Intenta de nuevo o escribe directo a jairovaron404@gmail.com",
+        "error"
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
   });
 }
 

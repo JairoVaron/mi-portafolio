@@ -4,20 +4,21 @@ Portafolio web personal desarrollado con **HTML, CSS y JavaScript**, diseñado p
 
 ## Características
 
-* Diseño moderno y responsive.
+* Diseño moderno y completamente responsive.
 * Modo claro / oscuro con persistencia.
-* Animaciones y transiciones con CSS y JavaScript.
-* Efectos al hacer scroll.
+* Animaciones y efectos interactivos.
 * Filtros dinámicos para proyectos.
-* Contadores animados.
-* Formulario de contacto.
-* Carga dinámica de proyectos y certificaciones desde archivos JSON.
+* Carga de proyectos y certificaciones desde archivos JSON.
+* Descarga de CV en PDF.
+* Formulario de contacto conectado con **Formspree** para recibir mensajes directamente en mi correo.
 
 ## Estructura del proyecto
 
 ```text
 portfolio/
 │── index.html
+│── netlify.toml
+│── README.md
 │
 ├── assets/
 │   ├── css/
@@ -28,11 +29,12 @@ portfolio/
 │   ├── js/
 │   │   ├── app.js
 │   │   ├── effects.js
-│   │   └── projects.js
+│   │   ├── projects.js
+│   │   └── certifications.js
 │   │
 │   ├── images/
 │   │   ├── profile.jpg
-│   │   ├── logo.png
+│   │   ├── logo.webp
 │   │   └── projects/
 │   │
 │   └── files/
@@ -44,14 +46,6 @@ portfolio/
     └── certifications.json
 ```
 
-## Archivos importantes
-
-Estos archivos ya están referenciados en el proyecto y **deben mantener el mismo nombre y ruta**:
-
-* `assets/images/profile.jpg`
-* `assets/images/logo.png`
-* `assets/files/Jairo_Varon_CV.pdf`
-
 ## Personalización
 
 ### Agregar proyectos
@@ -62,11 +56,11 @@ Edita el archivo:
 data/projects.json
 ```
 
-Cada proyecto se carga automáticamente en la página.
+Los proyectos se cargan automáticamente en la página.
 
 ### Agregar certificaciones
 
-1. Coloca los certificados (PDF o imagen) en:
+1. Coloca los certificados en:
 
 ```text
 assets/files/certificates/
@@ -85,15 +79,38 @@ Ejemplo:
   "title": "Fundamentos de Python",
   "issuer": "Cisco Networking Academy",
   "date": "2024",
-  "file": "assets/files/certificates/python.pdf"
+  "file": "assets/files/certificates/python-1.pdf"
 }
 ```
 
 Si el campo `file` está vacío (`""`), la web mostrará **“Certificado próximamente”**.
 
+## Configurar el formulario de contacto
+
+El formulario utiliza **Formspree** para enviar mensajes directamente a mi correo (`jairovaron404@gmail.com`) sin necesidad de un backend propio.
+
+1. Crear una cuenta en **Formspree**.
+2. Crear un formulario y copiar el **ID** asignado.
+3. Editar `assets/js/effects.js` y reemplazar:
+
+```js
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/TU_ID_DE_FORMSPREE";
+```
+
+Por ejemplo:
+
+```js
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mzbqjkvd";
+```
+
+4. Publicar el sitio en Netlify, Vercel o GitHub Pages.
+5. Confirmar el correo de activación que envía Formspree.
+
+Una vez configurado, los mensajes enviados desde el formulario llegarán directamente a mi bandeja de entrada.
+
 ## Ejecutar localmente
 
-Como el proyecto utiliza `fetch()` para cargar los archivos JSON, es recomendable usar un servidor local.
+Como el proyecto utiliza `fetch()` para cargar archivos JSON, es recomendable usar un servidor local.
 
 Con Python:
 
@@ -107,13 +124,9 @@ Luego abre:
 http://localhost:8000
 ```
 
-## Publicación
+## Despliegue
 
-Este portafolio puede desplegarse fácilmente en:
-
-* GitHub Pages
-* Netlify
-* Vercel
+Este portafolio está preparado para desplegarse fácilmente en **Netlify**, **Vercel** o **GitHub Pages**.
 
 ## Autor
 
