@@ -1,87 +1,122 @@
-# Portafolio — Jairo de Jesús Varón Hernández
+# Portafolio web — Jairo de Jesús Varón Hernández
+
+Portafolio web personal desarrollado con **HTML, CSS y JavaScript**, diseñado para mostrar mis proyectos, habilidades, experiencia y certificaciones como desarrollador de software.
+
+## Características
+
+* Diseño moderno y responsive.
+* Modo claro / oscuro con persistencia.
+* Animaciones y transiciones con CSS y JavaScript.
+* Efectos al hacer scroll.
+* Filtros dinámicos para proyectos.
+* Contadores animados.
+* Formulario de contacto.
+* Carga dinámica de proyectos y certificaciones desde archivos JSON.
 
 ## Estructura del proyecto
 
+```text
+portfolio/
+│── index.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── base.css
+│   │   ├── components.css
+│   │   └── animations.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── effects.js
+│   │   └── projects.js
+│   │
+│   ├── images/
+│   │   ├── profile.jpg
+│   │   ├── logo.png
+│   │   └── projects/
+│   │
+│   └── files/
+│       ├── Jairo_Varon_CV.pdf
+│       └── certificates/
+│
+└── data/
+    ├── projects.json
+    └── certifications.json
 ```
-index.html
-assets/
-  css/
-    base.css         → variables, reset, tipografía, utilidades, modo día/noche
-    components.css   → navbar, hero, botones, cards, timeline, formulario, footer
-    animations.css   → keyframes, reveal on scroll, responsive
-  js/
-    app.js           → tema, navbar, efecto de escritura, contadores, reveal, scrollspy
-    effects.js       → formulario de contacto, copiar correo, glow del cursor
-    projects.js      → carga y filtra proyectos desde data/projects.json
-  images/
-    profile.jpg      → ⚠️ coloca aquí tu foto de perfil (ya referenciada, respeta el nombre)
-    logo.png         → ⚠️ tu ícono/favicon (ya referenciado)
-    projects/        → portadas de cada proyecto (se incluyeron placeholders en SVG,
-                        puedes reemplazarlas por capturas reales manteniendo el mismo nombre)
-  files/
-    Jairo_Varon_CV.pdf → ⚠️ coloca aquí tu hoja de vida en PDF
-    certificates/     → ⚠️ coloca aquí tus diplomas/certificados (PDF o imagen)
-data/
-  projects.json        → información de los proyectos (edítalo para añadir/quitar proyectos)
-  certifications.json  → información de tus certificaciones (edítalo para añadir/quitar)
+
+## Archivos importantes
+
+Estos archivos ya están referenciados en el proyecto y **deben mantener el mismo nombre y ruta**:
+
+* `assets/images/profile.jpg`
+* `assets/images/logo.png`
+* `assets/files/Jairo_Varon_CV.pdf`
+
+## Personalización
+
+### Agregar proyectos
+
+Edita el archivo:
+
+```text
+data/projects.json
 ```
 
-## Qué se mantuvo igual (rutas respetadas)
+Cada proyecto se carga automáticamente en la página.
 
-- `assets/images/profile.jpg`
-- `assets/images/logo.png`
-- `assets/files/Jairo_Varon_CV.pdf`
+### Agregar certificaciones
 
-Estos tres archivos **no se generaron** porque ya los tienes en tu proyecto original: solo
-asegúrate de copiarlos dentro de las carpetas indicadas arriba con esos mismos nombres y
-todo funcionará sin tocar el código.
+1. Coloca los certificados (PDF o imagen) en:
 
-## Qué se agregó
+```text
+assets/files/certificates/
+```
 
-- 4 imágenes SVG de portada para los proyectos (`assets/images/projects/`), generadas como
-  marcador visual — puedes cambiarlas por capturas reales de cada proyecto cuando quieras,
-  solo respeta el nombre de archivo o actualiza la ruta en `data/projects.json`.
-- Modo día/noche con persistencia en `localStorage`.
-- Filtros dinámicos de proyectos por categoría.
-- Formulario de contacto validado en JS (abre tu cliente de correo con el mensaje redactado).
-- Animaciones de scroll, contador de estadísticas, barras de idiomas, efecto de escritura
-  tipo terminal en el hero.
+2. Actualiza el archivo:
 
-## Cómo subir tus certificaciones
+```text
+data/certifications.json
+```
 
-La sección "Trayectoria" ahora carga tus certificaciones dinámicamente desde
-`data/certifications.json`, igual que los proyectos. Para que el botón **"Ver certificado"**
-funcione:
+Ejemplo:
 
-1. Coloca el archivo de cada certificado (PDF o imagen) dentro de `assets/files/certificates/`.
-2. Ábrelo `data/certifications.json` y en cada objeto ajusta el campo `"file"` con la ruta
-   exacta de ese archivo. Ejemplo:
+```json
+{
+  "title": "Fundamentos de Python",
+  "issuer": "Cisco Networking Academy",
+  "date": "2024",
+  "file": "assets/files/certificates/python.pdf"
+}
+```
 
-   ```json
-   {
-     "title": "Fundamentos de Python 1",
-     "issuer": "Cisco Networking Academy (MinTIC)",
-     "date": "2024",
-     "file": "assets/files/certificates/python-1.pdf"
-   }
-   ```
+Si el campo `file` está vacío (`""`), la web mostrará **“Certificado próximamente”**.
 
-3. Si todavía no tienes el archivo escaneado de alguna certificación, deja el campo `"file"`
-   como cadena vacía `""` y el sitio mostrará automáticamente "Certificado próximamente" en
-   lugar de un enlace roto.
-4. ¿Tienes una certificación nueva que no está en la lista? Agrega un objeto más al arreglo
-   del JSON con la misma estructura — no necesitas tocar el HTML ni el JS.
+## Ejecutar localmente
 
-## Cómo verlo localmente
+Como el proyecto utiliza `fetch()` para cargar los archivos JSON, es recomendable usar un servidor local.
 
-Al usar `fetch()` para cargar `data/projects.json`, necesitas servir el sitio con un
-servidor local (no funciona abriendo el `index.html` directamente con doble clic en algunos
-navegadores). Una forma sencilla:
+Con Python:
 
 ```bash
-# Desde la carpeta del proyecto
-python3 -m http.server 8000
-# Luego abre http://localhost:8000 en tu navegador
+python -m http.server 8000
 ```
 
-También puedes subir la carpeta completa a GitHub Pages, Netlify o Vercel para publicarla.
+Luego abre:
+
+```text
+http://localhost:8000
+```
+
+## Publicación
+
+Este portafolio puede desplegarse fácilmente en:
+
+* GitHub Pages
+* Netlify
+* Vercel
+
+## Autor
+
+**Jairo de Jesús Varón Hernández**
+
+Desarrollador de software | Java • Spring Boot • Python • JavaScript
