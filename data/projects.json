@@ -24,7 +24,7 @@
     "image": "assets/images/projects/biblioteca.webp"
   },
   {
-    "title": "Calculadora de Notas",
+    "title": "NotaLab - Calculadora de Notas",
     "description": "Aplicación web que calcula promedios académicos y proyecta las calificaciones necesarias para aprobar una asignatura o alcanzar una nota objetivo.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "category": "Frontend",
