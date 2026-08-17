@@ -8,12 +8,20 @@
     "image": "assets/images/projects/chatintegrity.webp"
   },
   {
-    "title": "CRUD de Estudiantes - Spring Boot",
+    "title": "Sistema CRUD de Estudiantes",
     "description": "Aplicación web para la gestión de estudiantes mediante operaciones CRUD. Implementa una arquitectura MVC con Spring Boot, persistencia de datos mediante Spring Data JPA y MySQL, vistas dinámicas con Thymeleaf y una API REST para las operaciones de gestión.",
     "technologies": ["Java 21", "Spring Boot", "Spring Web", "Spring Data JPA", "Thymeleaf", "MySQL", "Bootstrap 5", "Maven", "Lombok"],
     "category": "Backend",
     "github": "https://github.com/JairoVaron/springboot-student-crud.git",
     "image": "assets/images/projects/springboot-crud.webp"
+  },
+  {
+    "title": "NóminaVerde - Sistema de Gestión de Empleados",
+    "description": "Aplicación web para la gestión de empleados mediante operaciones CRUD. Desarrollada con Java Web bajo una arquitectura MVC, utilizando JSP, Servlets y JDBC para la lógica y acceso a datos, con MySQL como base de datos y una interfaz responsiva con Bootstrap 5.",
+    "technologies": ["Java 17+", "Jakarta Servlet", "JSP", "JSTL", "JDBC", "Maven", "MySQL", "Bootstrap 5", "Font Awesome"],
+    "category": "Backend",
+    "github": "https://github.com/JairoVaron/sistema-gestion-empleados-java-web.git",
+    "image": "assets/images/projects/nomina-verde.webp"
   },
   {
     "title": "Sistema de Gestión de Asistencias",
