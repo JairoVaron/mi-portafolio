@@ -1,7 +1,7 @@
 [
   {
     "title": "CHATintegrity — Plataforma de Comunicación Empresarial",
-    "description": "Aplicación web de mensajería en tiempo real que permite comunicación global y privada entre usuarios mediante WebSockets. Implementa autenticación, gestión de usuarios y comunicación en tiempo real.",
+    "description": "Aplicación web de mensajería en tiempo real para comunicación global y privada entre usuarios mediante WebSockets, con autenticación y gestión de usuarios.",
     "technologies": ["Node.js", "Express.js", "Socket.IO", "PostgreSQL"],
     "category": "Backend",
     "github": "https://github.com/JairoVaron/CHATintegrity",
@@ -9,31 +9,31 @@
   },
   {
     "title": "Sistema CRUD de Estudiantes",
-    "description": "Aplicación web para la gestión de estudiantes mediante operaciones CRUD. Implementa una arquitectura MVC con Spring Boot, persistencia de datos mediante Spring Data JPA y MySQL, vistas dinámicas con Thymeleaf y una API REST para las operaciones de gestión.",
-    "technologies": ["Java 21", "Spring Boot", "Spring Web", "Spring Data JPA", "Thymeleaf", "MySQL", "Bootstrap 5", "Maven", "Lombok"],
+    "description": "Aplicación web para la gestión de estudiantes mediante operaciones CRUD, desarrollada con Spring Boot, JPA, MySQL y una API REST.",
+    "technologies": ["Java", "Spring Boot", "JPA", "MySQL", "Thymeleaf"],
     "category": "Backend",
     "github": "https://github.com/JairoVaron/springboot-student-crud.git",
     "image": "assets/images/projects/springboot-crud.webp"
   },
   {
-    "title": "NóminaVerde - Sistema de Gestión de Empleados",
-    "description": "Aplicación web para la gestión de empleados mediante operaciones CRUD. Desarrollada con Java Web bajo una arquitectura MVC, utilizando JSP, Servlets y JDBC para la lógica y acceso a datos, con MySQL como base de datos y una interfaz responsiva con Bootstrap 5.",
-    "technologies": ["Java 17+", "Jakarta Servlet", "JSP", "JSTL", "JDBC", "Maven", "MySQL", "Bootstrap 5", "Font Awesome"],
-    "category": "Backend",
-    "github": "https://github.com/JairoVaron/sistema-gestion-empleados-java-web.git",
-    "image": "assets/images/projects/nomina-verde.webp"
-  },
-  {
     "title": "Sistema de Gestión de Asistencias",
-    "description": "Aplicación web para administrar docentes, asistencias, programas y semestres académicos. Incluye autenticación de usuarios y operaciones CRUD para la gestión académica.",
+    "description": "Aplicación web para administrar docentes, asistencias, programas y semestres académicos mediante autenticación y operaciones CRUD.",
     "technologies": ["Python", "Django", "MySQL"],
     "category": "Backend",
     "github": "https://github.com/JairoVaron/asistencia_docente_",
     "image": "assets/images/projects/asistencia.webp"
   },
   {
+    "title": "NóminaVerde - Sistema de Gestión de Empleados",
+    "description": "Aplicación web para la gestión de empleados mediante operaciones CRUD, desarrollada con Java Web bajo una arquitectura MVC.",
+    "technologies": ["Java", "Servlets", "JSP", "JDBC", "MySQL"],
+    "category": "Backend",
+    "github": "https://github.com/JairoVaron/sistema-gestion-empleados-java-web.git",
+    "image": "assets/images/projects/nomina-verde.webp"
+  },
+  {
     "title": "Sistema de Gestión de Biblioteca",
-    "description": "Aplicación de escritorio para administración de libros con operaciones CRUD, búsqueda y validación de registros.",
+    "description": "Aplicación de escritorio para la administración de libros mediante operaciones CRUD, búsqueda y validación de registros.",
     "technologies": ["Java", "Swing", "NetBeans"],
     "category": "Escritorio",
     "github": "https://github.com/JairoVaron/Sistema-de-Gesti-n-de-Biblioteca---JAVA",
@@ -41,7 +41,7 @@
   },
   {
     "title": "NotaLab - Calculadora de Notas",
-    "description": "Aplicación web que calcula promedios académicos y proyecta las calificaciones necesarias para aprobar una asignatura o alcanzar una nota objetivo.",
+    "description": "Aplicación web para calcular promedios académicos y proyectar las calificaciones necesarias para aprobar una asignatura o alcanzar una nota objetivo.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "category": "Frontend",
     "github": "https://github.com/JairoVaron/Calculadora-de-Notas",
